@@ -64,7 +64,7 @@ function pressBackspaceButton() {
 	this.classList.add('pressed');
 };
 
-function pressClearButton() {
+function pressClearButton() {     ///Set variables to 0
 	aAsNum = 0;
 	bAsNum = 0;
 	aAsString = '0';
@@ -75,7 +75,7 @@ function pressClearButton() {
 	this.classList.add('pressed');
 }
 
-function pressEqualButton() {
+function pressEqualButton() {	///Check for dividing by zero, check for if no operator has been selected
 	if ((oper == '/') && (aAsNum == 0)) {
 		display.textContent = 'You know better!';
 		oper = 'reset';
@@ -94,7 +94,7 @@ function pressEqualButton() {
 	this.classList.add('pressed');
 };
 
-function pressOperatorButton() {
+function pressOperatorButton() {	///Check for dividing by zero, check to see if there is only one number so far
 	if ((oper == '/') && (aAsNum == 0)) {
 		display.textContent = 'You know better!';
 		oper = 'reset';
@@ -115,7 +115,7 @@ function pressOperatorButton() {
 	this.classList.add('pressed');
 };	
 
-function pressNumberButton(e) {
+function pressNumberButton() {
 	if (oper == 'reset') {
 		dotFlag = 'off';
 		memoryDisplay.textContent = '';
@@ -153,12 +153,7 @@ function pressNumberButton(e) {
 	this.classList.add('pressed');
 };
 
-function removeTransition(e) {
-	if (e.propertyName !== 'transform') return;
-	e.target.classList.remove('playing');
-}
-
-function keyboardUsed(e) {
+function keyboardUsed(e) {	///Change idNum if e.key can't be used as html id, run correct function based on button
 	switch (e.key){
 		case '+':
 		case '-':
@@ -211,9 +206,6 @@ function keyboardUsed(e) {
 	const key = document.querySelector(`div[data-key="${e.key}"]`);
 	key.classList.add('pressed');
 }
-
-const keys = Array.from(document.querySelectorAll('.key'));
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', keyboardUsed);	
 buttons.forEach(btn => btn.addEventListener('click', pressNumberButton));
