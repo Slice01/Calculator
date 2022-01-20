@@ -1,0 +1,106 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+h3 {
+	text-align: right;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	margin: 10px;
+}
+
+.row {
+	display: flex;
+	flex: 1;
+	
+	
+	
+	border-width: 0px;
+	border-color: red;
+	margin: 3px;
+}
+
+.buttons {
+	font-size: 180%;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	background: #d0d0d0;
+	box-shadow: 3px 3px 5px #606060;
+	border-width: 2px;
+	border-color: #606060;
+	transition: all .06s ease;
+
+	margin: 13px;
+}
+
+.buttons:hover {
+	cursor: pointer;
+}
+
+.pressed {
+	transition: all .06s ease;
+	transform: scale(99.99%);
+	box-shadow: 3px 3px 5px #606060 inset;
+}
+
+#title {
+	display: flex;
+	justify-content: center;
+	font-family: xxx;
+	font-size: 48px;
+	font-weight: 700;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	border-width: 1px;
+}
+
+#calc {
+	display: flex;
+	flex-direction: column;
+	background: #c0c0c0;
+	width:350px;
+	height: 700px;	
+	border-width: 3px;
+	border-color: black;
+}
+
+#displayContainer {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	flex: 1;
+	margin: 30px;
+	border-width: 1px;
+	border-color: #101010;
+	background: #101010;
+	box-shadow: 5px 5px 5px #606060 inset;
+}
+
+#textContainer {
+	display: block;
+	margin: 10px;
+	text-align: right;
+	color: yellow;
+	font-size: 48px;
+}
+
+#memoryNumber {
+	font-size: 12px;
+	text-align: right;
+}
+
+#buttonContainer {
+	justify-content: space-around;
+	align-items: stretch;
+	flex: 3;
+}

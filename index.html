@@ -6,6 +6,51 @@
 		<link rel="stylesheet" type="text/css" href="css/calc.css">
 	</head>
 	<body>
+		<div id='title'>
+			<h1>Calculator</h1>
+		</div>
+		<div class='container'>
+			<div id='calc'>
+				<div id='displayContainer'>
+					<div class='container' id='textContainer'>
+						<p id='memoryNumber'></p>
+						<h3 id='displayText'>0</h3>
+					</div>
+				</div>
+				<div class='container' id='buttonContainer'>
+					<div class='row'>
+						<div data-key='7' id='key7' class='button buttons key'>7</div>
+						<div data-key='8' id='key8' class='button buttons key'>8</div>
+						<div data-key='9' id='key9' class='button buttons key'>9</div>
+						<div data-key='/' id='keyDivide' class='buttonOp buttons key'>/</div>
+					</div>
+					<div class='row'>
+						<div data-key='4' id='key4' class='button buttons key'>4</div>
+						<div data-key='5' id='key5' class='button buttons key'>5</div>
+						<div data-key='6' id='key6' class='button buttons key'>6</div>
+						<div data-key='*' id='keyMultiply' class='buttonOp buttons key'>x</div>
+					</div>
+					<div class='row'>
+						<div data-key='1' id='key1' class='button buttons key'>1</div>
+						<div data-key='2' id='key2' class='button buttons key'>2</div>
+						<div data-key='3' id='key3' class='button buttons key'>3</div>
+						<div data-key='-' id='key-' class='buttonOp buttons key'>-</div>
+					</div>
+					<div class='row'>
+						<div data-key='Escape' id='keyEscape' class='buttonCl buttons key'>Cl</div>
+						<div data-key='0' id='key0' class='button buttons key' id='0' <--onClick='pressNumberButton(this.id)-->'>0</div>
+						<div data-key='.' id='keyDot' class='button buttons key'>.</div>
+						<div data-key='+' id='keyPlus' class='buttonOp buttons key'>+</div>
+					</div>
+					<div class ='row'>
+						<div data-key='Backspace' id='keyBackspace' class='buttonBS buttons key'>
+							<img src='./assets/backspace.png' height='18' width='25'></img>
+						</div>
+						<div data-key='Enter' id='keyEnter' class='buttonEq buttons key'>=</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 
