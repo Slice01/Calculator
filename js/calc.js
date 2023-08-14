@@ -14,6 +14,7 @@ let bAsString;
 let dotFlag;
 let btn;
 
+//Math functions based on operator
 function removeClass() {
 	this.classList.remove('pressed');
 }
@@ -53,6 +54,7 @@ function operate(oper, aAsNum, bAsNum) {
 	};
 };
 
+//Remove last entry or set to zero on Backspace button
 function pressBackspaceButton() {
 	if (display.textContent.length == 1) {
 		aAsString = '0';
@@ -64,7 +66,8 @@ function pressBackspaceButton() {
 	this.classList.add('pressed');
 };
 
-function pressClearButton() {     ///Set variables to 0
+///Set variables to 0 and empty strings on Clear button
+function pressClearButton() {
 	aAsNum = 0;
 	bAsNum = 0;
 	aAsString = '0';
@@ -75,9 +78,10 @@ function pressClearButton() {     ///Set variables to 0
 	this.classList.add('pressed');
 }
 
-function pressEqualButton() {	///Check for dividing by zero, check for if no operator has been selected
+///Check for dividing by zero, check for if no operator has been selected, calculate on Equals button
+function pressEqualButton() {
 	if ((oper == '/') && (aAsNum == 0)) {
-		display.textContent = 'You know better!';
+		display.textContent = 'Cannot divide by zero!';
 		oper = 'reset';
 	} else if (oper == null) {
 		memoryDisplay.textContent = Math.round(display.textContent * 100000000) / 100000000 + ' ' + '=';
@@ -94,9 +98,10 @@ function pressEqualButton() {	///Check for dividing by zero, check for if no ope
 	this.classList.add('pressed');
 };
 
-function pressOperatorButton() {	///Check for dividing by zero, check to see if there is only one number so far
+//Check for dividing by zero, check to see if there is only one number, calculate if necessary, on operator button
+function pressOperatorButton() {
 	if ((oper == '/') && (aAsNum == 0)) {
-		display.textContent = 'You know better!';
+		display.textContent = 'Cannot divide by zero!';
 		oper = 'reset';
 	} else {
 		if ((oper == null) || (oper == 'reset')) {
@@ -153,7 +158,8 @@ function pressNumberButton() {
 	this.classList.add('pressed');
 };
 
-function keyboardUsed(e) {	///Change idNum if e.key can't be used as html id, run correct function based on button
+//Change idNum if e.key can't be used as html id, run correct function based on button
+function keyboardUsed(e) {
 	switch (e.key){
 		case '+':
 		case '-':
